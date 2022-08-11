@@ -1,6 +1,6 @@
 # Lit-based Add-on for Vaadin 
 
-An example project for creating a Vaadin add-on. 
+![clock-element](https://user-images.githubusercontent.com/991105/184157011-9cdd51bb-2a57-4698-9fbb-e539d382e99f.png)
 
 You should start from this project, if your add-on be based on custom Lit HTML element and provide Java API for the rest of the application.
 As an example this project implements a simple clock-element to display current time based on browser. 
