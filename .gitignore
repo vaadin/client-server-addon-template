@@ -32,3 +32,4 @@ webpack.generated.js
 webpack.config.js
 types.d.ts
 tsconfig.json
+src/main/resources/META-INF/resources/frontend/generated
