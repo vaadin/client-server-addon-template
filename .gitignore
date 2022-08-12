@@ -21,3 +21,16 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+error-screenshots
+frontend/generated
+frontend/index.html
+.npmrc
+.pnpmfile.cjs
+package.json
+pnpm-lock.yaml
+webpack.generated.js
+webpack.config.js
+types.d.ts
+tsconfig.json
+src/main/resources/META-INF/resources/frontend/generated
+src/main/resources/META-INF/resources/frontend/index.html
