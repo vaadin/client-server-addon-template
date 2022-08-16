@@ -40,7 +40,6 @@ import com.vaadin.testbench.TestBenchTestCase;
  */
 public abstract class AbstractViewTest extends TestBenchTestCase {
     private static final int SERVER_PORT = 8080;
-    private static final String WEB_SOCKET_CONNECTION_ERROR_PREFIX = "WebSocket connection to ";
 
     private final String route;
 
