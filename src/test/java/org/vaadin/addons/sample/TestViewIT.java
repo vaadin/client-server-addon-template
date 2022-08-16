@@ -11,11 +11,11 @@ import org.junit.Test;
 public class TestViewIT extends AbstractViewTest {
 
     public TestViewIT() {
-        super("");
+        super();
     }
 
     @Test
-    public void componentWorks() throws IOException {
+    public void componentIsPresent()  {
         ClockElement elem = $(ClockElement.class).first();
         Assert.assertNotNull(elem);
     }
