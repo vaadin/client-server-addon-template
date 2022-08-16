@@ -364,9 +364,6 @@
                         <artifactId>jetty-maven-plugin</artifactId>
                         <configuration>
                             <useTestScope>true</useTestScope>
-                            <httpConnector>
-                                <port>8099</port>
-                            </httpConnector>
                             <stopKey>stop-it</stopKey>
                             <stopPort>8098</stopPort>
                             <scanIntervalSeconds>0</scanIntervalSeconds>
