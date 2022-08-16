@@ -3,10 +3,6 @@ package org.vaadin.addons.sample;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.function.Predicate;
-import java.util.logging.Level;
 import java.util.stream.Collectors;
 
 import org.junit.Before;
@@ -15,8 +11,6 @@ import org.junit.Rule;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.logging.LogEntry;
-import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.vaadin.testbench.Parameters;
@@ -38,7 +32,7 @@ import com.vaadin.testbench.TestBenchTestCase;
  * To learn more about TestBench, visit
  * <a href="https://vaadin.com/docs/v10/testbench/testbench-overview.html">Vaadin TestBench</a>.
  */
-public abstract class AbstractViewTest extends TestBenchTestCase {
+public abstract class AbstractTestBenchIntegrationTest extends TestBenchTestCase {
     private static final int SERVER_PORT = 8080;
 
     private final String route;
@@ -52,11 +46,11 @@ public abstract class AbstractViewTest extends TestBenchTestCase {
         WebDriverManager.chromedriver().setup();
     }
 
-    public AbstractViewTest() {
+    public AbstractTestBenchIntegrationTest() {
         this("");
     }
 
-    protected AbstractViewTest(String route) {
+    protected AbstractTestBenchIntegrationTest(String route) {
         this.route = route;
     }
 

@@ -34,3 +34,5 @@ types.d.ts
 tsconfig.json
 src/main/resources/META-INF/resources/frontend/generated
 src/main/resources/META-INF/resources/frontend/index.html
+/target/
+node_modules

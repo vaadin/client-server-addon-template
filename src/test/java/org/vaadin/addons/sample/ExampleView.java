@@ -9,13 +9,13 @@ import com.vaadin.flow.router.Route;
  *
  */
 @Route("")
-public class TestView extends VerticalLayout {
+public class ExampleView extends VerticalLayout {
     Clock clock = new Clock();
     ToggleButton format12h = new ToggleButton("Use 12 hour format",clock.isFormat12h());
     ToggleButton showSeconds = new ToggleButton("Show seconds",clock.isShowSeconds());
     Select<Integer> update = new Select<>();
 
-    public TestView() {
+    public ExampleView() {
 
         update.setLabel("Update interval");
         update.setItems(0,1,2,5,10,30,60);

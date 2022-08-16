@@ -1,16 +1,17 @@
 package org.vaadin.addons.sample;
 
-import java.io.IOException;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
 /** Integration test for the component.
  *
  */
-public class TestViewIT extends AbstractViewTest {
+public class ExampleViewIT extends AbstractTestBenchIntegrationTest {
 
-    public TestViewIT() {
+    public ExampleViewIT() {
         super();
     }
 
