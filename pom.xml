@@ -144,6 +144,12 @@
         <!-- Define all plugin versions. Plugins are configured in profiles. -->
         <pluginManagement>
             <plugins>
+                <!-- Use newer assembly plugin. 2.x has some problems. -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>3.4.2</version>
+                </plugin>
                 <plugin>
                     <groupId>com.vaadin</groupId>
                     <artifactId>vaadin-maven-plugin</artifactId>
@@ -226,7 +232,7 @@
                         <configuration>
                             <appendAssemblyId>false</appendAssemblyId>
                             <descriptors>
-                                <descriptor>assembly/assembly.xml</descriptor>
+                                <descriptor>src/assembly/assembly.xml</descriptor>
                             </descriptors>
                         </configuration>
                         <executions>
