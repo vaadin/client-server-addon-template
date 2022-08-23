@@ -75,12 +75,14 @@ export class ClockElement extends LitElement {
     }
 
     /** This disables the shadow DOM for this element. 
-     * 
-     *  Remove the whole method if you want to utilize shadow DOM.
-     */
+     *  
+     *  Uncomment this, if you don't want to utilize shadow DOM. It might be needed when you e.g. 
+     * integrate with external JavaScript libraries to give them access to the component structure.
+     *
     createRenderRoot() {
         return this;
     }
+    */
 
     /** Render the clock.
      * 

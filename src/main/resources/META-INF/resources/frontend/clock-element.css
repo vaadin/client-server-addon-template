@@ -1,9 +1,19 @@
+
+/* Styling for the whole element itself. */
 clock-element {
   font-weight: bold;
-  font-size: var(--lumo-font-size-xl);
+  font-size: var(--lumo-font-size-s);
 }
 
-clock-element span[part="period"] {
+/* Example how to style the period indicator part. */
+clock-element::part(hours),
+clock-element::part(minutes),
+clock-element::part(seconds) {
+	font-size: var(--lumo-font-size-xl);
+}
+
+/* Example how to style the period indicator part. */
+clock-element::part(period) {
   font-weight: normal;
 	font-size: var(--lumo-font-size-s);
 }
