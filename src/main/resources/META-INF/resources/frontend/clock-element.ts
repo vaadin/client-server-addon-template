@@ -1,6 +1,5 @@
-
-
-import { customElement, property, css, html, LitElement, TemplateResult, PropertyValueMap } from 'lit-element';
+import {html, LitElement, TemplateResult, PropertyValueMap } from 'lit';
+import {property, customElement, css} from 'lit/decorators.js';
 
 /** Custom elemnt displaying current time clock.
  * 
