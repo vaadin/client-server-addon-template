@@ -33,7 +33,7 @@ import com.vaadin.testbench.TestBenchTestCase;
  * <a href="https://vaadin.com/docs/v10/testbench/testbench-overview.html">Vaadin TestBench</a>.
  */
 public abstract class AbstractTestBenchIntegrationTest extends TestBenchTestCase {
-    private static final int SERVER_PORT = 8080;
+    private static final int COMPONENT_DEV_SERVER_PORT = 8099;
 
     private final String route;
 
@@ -74,7 +74,7 @@ public abstract class AbstractTestBenchIntegrationTest extends TestBenchTestCase
     }
 
     protected int getDeploymentPort() {
-        return SERVER_PORT;
+        return COMPONENT_DEV_SERVER_PORT;
     }
 
     protected String getTestURL(String... parameters) {
@@ -135,7 +135,7 @@ public abstract class AbstractTestBenchIntegrationTest extends TestBenchTestCase
      */
     private static String getURL(String route) {
         return String.format("http://%s:%d/%s", getDeploymentHostname(),
-                SERVER_PORT, route);
+                COMPONENT_DEV_SERVER_PORT, route);
     }
 
     /**
