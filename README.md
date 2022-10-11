@@ -1,8 +1,8 @@
-# Lit-based Add-on for Vaadin 
+# Add-on template for Vaadin with an embedded Lit component 
 
 ![clock-element](https://user-images.githubusercontent.com/991105/184157011-9cdd51bb-2a57-4698-9fbb-e539d382e99f.png)
 
-You should start from this project, if your add-on be based on custom Lit HTML element and provide Java API for the rest of the application.
+You should start from this project, if your add-on will be based on custom Lit HTML element (that you are not planning to publish through npm) and provide Java API for the rest of the application.
 As an example this project implements a simple clock-element to display current time based on browser. 
 
 For creating a  simple wrapper for a JS module you might want to use the [Component Starter](https://github.com/vaadin/component-starter-flow) repository as a template instead.
