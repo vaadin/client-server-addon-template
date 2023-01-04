@@ -5,7 +5,13 @@
 You should start from this project, if your add-on will be based on custom Lit HTML element (that you are not planning to publish through npm) and provide Java API for the rest of the application.
 As an example this project implements a simple clock-element to display current time based on browser. 
 
-For creating a  simple wrapper for a JS module you might want to use the [Component Starter](https://github.com/vaadin/component-starter-flow) repository as a template instead.
+### Alternative add-on templates
+
+If you wish to build and publish an add-on or extension in [Vaadin Directory](https://vaadin.com/directory), Vaadin provides the following three template projects:
+ 1. [vaadin/addon-template](https://github.com/vaadin/addon-template): Create a composite component. This Java-only template is the easiest when extending Vaadin Java components.
+ 2. [vaadin/client-server-addon-template](https://github.com/vaadin/client-server-addon-template): Build a standalone, client-server TypeScript-Java component. This template provides you with a [Lit-based](https://github.com/lit/lit/) example to start with.
+ 3. **(this repo)** [vaadin/npm-addon-template](https://github.com/vaadin/vaadin/npm-addon-template): Wrap a web component from [npmjs.com](https://npmjs.com/) as a Vaadin Java component.
+
 
 ## Development instructions
 
