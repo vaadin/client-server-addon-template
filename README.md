@@ -5,6 +5,9 @@
 You should start from this project, if your add-on will be based on custom Lit HTML element (that you are not planning to publish through npm) and provide Java API for the rest of the application.
 As an example this project implements a simple clock-element to display current time based on browser. 
 
+## Add-on architecture
+![client-server-addon](https://user-images.githubusercontent.com/991105/211867227-2c71ee29-9ea6-4de0-a5e4-2bf53781628d.svg)
+
 ### Alternative add-on templates
 
 If you wish to build and publish an add-on or extension in [Vaadin Directory](https://vaadin.com/directory), Vaadin provides the following three template projects:
