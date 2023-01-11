@@ -6,7 +6,7 @@ You should start from this project, if your add-on will be based on custom Lit H
 As an example this project implements a simple clock-element to display current time based on browser. 
 
 ## Add-on architecture
-![vaadin-client-server-addon](https://user-images.githubusercontent.com/991105/211798340-eadd2e7f-e6a0-4b55-8c19-3de741bee0f5.png)
+![client-server-addon](https://user-images.githubusercontent.com/991105/211867227-2c71ee29-9ea6-4de0-a5e4-2bf53781628d.svg)
 
 ### Alternative add-on templates
 
