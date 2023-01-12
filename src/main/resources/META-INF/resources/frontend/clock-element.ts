@@ -8,12 +8,11 @@ import {property, customElement} from 'lit/decorators.js';
 @customElement('clock-element')
 export class ClockElement extends LitElement {
 
-    @property() showSeconds : boolean = true;
+    @property({ type: Boolean }) showSeconds = true;
 
-    @property() format12h : boolean = false;
+    @property({ type: Boolean }) format12h = false;
 
-    @property() updateInterval : number = 0;
-
+    @property({ type: Number }) updateInterval = 0;
 
     // Formatted strings of current time
     private _hours: string = "";
