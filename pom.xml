@@ -11,14 +11,14 @@
     <description>Clock widget example for Vaadin</description>
 
     <properties>
-        <vaadin.version>23.2.4</vaadin.version>
+        <vaadin.version>24.0.9</vaadin.version>
 
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <jetty.version>9.4.48.v20220622</jetty.version>
+        <jetty.version>11.0.13</jetty.version>
     </properties>
 
     <organization>
@@ -125,19 +125,6 @@
             <version>4.0.0</version>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>5.2.3</version>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.jsoup</groupId>
-                    <artifactId>jsoup</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
     </dependencies>
 
     <build>
@@ -158,7 +145,7 @@
                 <plugin>
                     <groupId>org.eclipse.jetty</groupId>
                     <artifactId>jetty-maven-plugin</artifactId>
-                    <version>${jetty.version}</version>
+                    <version>11.0.13</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -188,7 +175,7 @@
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-maven-plugin</artifactId>
                 <configuration>
-                    <pnpmEnable>true</pnpmEnable>
+                    <pnpmEnable>false</pnpmEnable>
                     <requireHomeNodeExec>true</requireHomeNodeExec>
                 </configuration>
                 <executions>
@@ -295,13 +282,6 @@
             <properties>
                 <vaadin.productionMode>true</vaadin.productionMode>
             </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>com.vaadin</groupId>
-                    <artifactId>flow-server-production-mode</artifactId>
-                </dependency>
-            </dependencies>
-
             <build>
                 <plugins>
                     <plugin>

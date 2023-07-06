@@ -1,7 +1,5 @@
 package org.vaadin.addons.sample;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
@@ -40,11 +38,6 @@ public abstract class AbstractTestBenchIntegrationTest extends TestBenchTestCase
     @Rule
     public ScreenshotOnFailureRule rule = new ScreenshotOnFailureRule(this,
             true);
-
-    @BeforeClass
-    public static void setupClass() {
-        WebDriverManager.chromedriver().setup();
-    }
 
     public AbstractTestBenchIntegrationTest() {
         this("");
