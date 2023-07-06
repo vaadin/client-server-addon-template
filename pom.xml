@@ -282,6 +282,17 @@
             <properties>
                 <vaadin.productionMode>true</vaadin.productionMode>
             </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>com.vaadin</groupId>
+                    <artifactId>vaadin-core</artifactId>
+                    <scope>runtime</scope>
+                </dependency>
+                <dependency>
+                    <groupId>com.vaadin</groupId>
+                    <artifactId>flow-server-production-mode</artifactId>
+                </dependency>
+            </dependencies>
             <build>
                 <plugins>
                     <plugin>
@@ -309,6 +320,9 @@
                         <groupId>org.eclipse.jetty</groupId>
                         <artifactId>jetty-maven-plugin</artifactId>
                         <configuration>
+                            <httpConnector>
+                                <port>8099</port>
+                            </httpConnector>
                             <useTestScope>true</useTestScope>
                             <stopKey>stop-it</stopKey>
                             <stopPort>8098</stopPort>

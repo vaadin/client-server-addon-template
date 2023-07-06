@@ -8,6 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -15,6 +16,7 @@ import com.vaadin.testbench.Parameters;
 import com.vaadin.testbench.ScreenshotOnFailureRule;
 import com.vaadin.testbench.TestBench;
 import com.vaadin.testbench.TestBenchTestCase;
+import com.vaadin.testbench.parallel.ParallelTest;
 
 /**
  * Base class for ITs
@@ -30,7 +32,7 @@ import com.vaadin.testbench.TestBenchTestCase;
  * To learn more about TestBench, visit
  * <a href="https://vaadin.com/docs/v10/testbench/testbench-overview.html">Vaadin TestBench</a>.
  */
-public abstract class AbstractTestBenchIntegrationTest extends TestBenchTestCase {
+public abstract class AbstractTestBenchIntegrationTest extends ParallelTest {
     private static final int COMPONENT_DEV_SERVER_PORT = 8099;
 
     private final String route;
@@ -96,9 +98,14 @@ public abstract class AbstractTestBenchIntegrationTest extends TestBenchTestCase
 
     @Before
     public void setup() throws Exception {
-        ChromeOptions options = new ChromeOptions();
-        options.setHeadless(true);
-        setDriver(TestBench.createDriver(new ChromeDriver(options)));
+        if (isUsingHub()) {
+            super.setup();
+        } else {
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless=new", "--disable-gpu");
+
+            setDriver(TestBench.createDriver(new ChromeDriver(options)));
+        }
         getDriver().get(getURL(route));
 
         // We do screenshot testing, adjust settings to ensure less flakiness
