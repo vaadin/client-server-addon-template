@@ -37,7 +37,7 @@ Starting the test/demo server:
 mvn jetty:run
 ```
 
-This deploys test view at http://localhost:8099
+This deploys test view at http://localhost:8080
 
 ### Integration test
 
