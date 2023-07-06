@@ -11,7 +11,7 @@
     <description>Clock widget example for Vaadin</description>
 
     <properties>
-        <vaadin.version>23.2.4</vaadin.version>
+        <vaadin.version>23.3.16</vaadin.version>
 
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -298,6 +298,11 @@
             <dependencies>
                 <dependency>
                     <groupId>com.vaadin</groupId>
+                    <artifactId>vaadin-core</artifactId>
+                    <scope>runtime</scope>
+                </dependency>
+                <dependency>
+                    <groupId>com.vaadin</groupId>
                     <artifactId>flow-server-production-mode</artifactId>
                 </dependency>
             </dependencies>
@@ -329,6 +334,9 @@
                         <groupId>org.eclipse.jetty</groupId>
                         <artifactId>jetty-maven-plugin</artifactId>
                         <configuration>
+                            <httpConnector>
+                                <port>8099</port>
+                            </httpConnector>
                             <useTestScope>true</useTestScope>
                             <stopKey>stop-it</stopKey>
                             <stopPort>8098</stopPort>
