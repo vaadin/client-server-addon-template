@@ -104,7 +104,7 @@ public abstract class AbstractTestBenchIntegrationTest extends TestBenchTestCase
     @Before
     public void setup() throws Exception {
         ChromeOptions options = new ChromeOptions();
-        options.setHeadless(true);
+        options.addArguments("--headless=new", "--disable-gpu");
         setDriver(TestBench.createDriver(new ChromeDriver(options)));
         getDriver().get(getURL(route));
 
