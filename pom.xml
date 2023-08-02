@@ -254,9 +254,11 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-jar-plugin</artifactId>
                         <configuration>
-                            <!-- Generated file that shouldn't be included in add-ons -->
                             <excludes>
+                                <!-- Generated file that shouldn't be included in add-ons -->
                                 <exclude>META-INF/VAADIN/config/flow-build-info.json</exclude>
+                                <!-- Compiled frontend stuff that shouldn't be in add-ons -->
+                                <exclude>META-INF/VAADIN/webapp/**/*</exclude>
                             </excludes>
                         </configuration>
                     </plugin>
