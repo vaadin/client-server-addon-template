@@ -277,6 +277,12 @@
                     <scope>runtime</scope>
                 </dependency>
                 <dependency>
+                    <groupId>com.vaadin.componentfactory</groupId>
+                    <artifactId>togglebutton</artifactId>
+                    <version>3.0.0</version>
+                    <scope>runtime</scope>
+                </dependency>
+                <dependency>
                     <groupId>com.vaadin</groupId>
                     <artifactId>flow-server-production-mode</artifactId>
                 </dependency>
@@ -291,6 +297,9 @@
                                 <goals>
                                     <goal>build-frontend</goal>
                                 </goals>
+                                <configuration>
+                                     <optimizeBundle>false</optimizeBundle>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
