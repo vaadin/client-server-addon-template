@@ -274,7 +274,8 @@
             </properties>
             <dependencies>
                 <!-- We need to duplicate dependencies here in order to be able to
-                     run the test view in production mode when developing -->
+                     run the test view in production mode when developing.
+                     Note that scope needs to be runtime instead of the test scope above. -->
                 <dependency>
                     <groupId>com.vaadin</groupId>
                     <artifactId>vaadin-core</artifactId>
