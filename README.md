@@ -32,12 +32,16 @@ For testing and development:
 
 ### Deployment
 
-Starting the test/demo server:
+- Starting the test/demo server in dev-mode:
 ```
 mvn jetty:run
 ```
+- Starting the test/demo server in prod-mode:
+```
+mvn jetty:run -Pproduction
+```
 
-This deploys test view at http://localhost:8080
+These deploy test view at http://localhost:8080
 
 ### Integration test
 
