@@ -273,6 +273,8 @@
                 <vaadin.productionMode>true</vaadin.productionMode>
             </properties>
             <dependencies>
+                <!-- We need to duplicate dependencies here in order to be able to
+                     run the test view in production mode when developing -->
                 <dependency>
                     <groupId>com.vaadin</groupId>
                     <artifactId>vaadin-core</artifactId>
@@ -296,7 +298,7 @@
                                     <goal>build-frontend</goal>
                                 </goals>
                                 <configuration>
-                                     <optimizeBundle>false</optimizeBundle>
+                                    <optimizeBundle>false</optimizeBundle>
                                 </configuration>
                             </execution>
                         </executions>
