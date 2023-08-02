@@ -215,7 +215,7 @@
                                 <goals>
                                     <goal>single</goal>
                                 </goals>
-                                <phase>install</phase>
+                                <phase>package</phase>
                             </execution>
                         </executions>
                     </plugin>
@@ -254,9 +254,11 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-jar-plugin</artifactId>
                         <configuration>
-                            <!-- Generated file that shouldn't be included in add-ons -->
                             <excludes>
+                                <!-- Generated file that shouldn't be included in add-ons -->
                                 <exclude>META-INF/VAADIN/config/flow-build-info.json</exclude>
+                                <!-- Compiled frontend stuff that shouldn't be in add-ons -->
+                                <exclude>META-INF/VAADIN/webapp/**/*</exclude>
                             </excludes>
                         </configuration>
                     </plugin>
@@ -271,14 +273,19 @@
                 <vaadin.productionMode>true</vaadin.productionMode>
             </properties>
             <dependencies>
+                <!-- We need to duplicate dependencies here in order to be able to
+                     run the test view in production mode when developing.
+                     Note that scope needs to be runtime instead of the test scope above. -->
                 <dependency>
                     <groupId>com.vaadin</groupId>
                     <artifactId>vaadin-core</artifactId>
                     <scope>runtime</scope>
                 </dependency>
                 <dependency>
-                    <groupId>com.vaadin</groupId>
-                    <artifactId>flow-server-production-mode</artifactId>
+                    <groupId>com.vaadin.componentfactory</groupId>
+                    <artifactId>togglebutton</artifactId>
+                    <version>3.0.0</version>
+                    <scope>runtime</scope>
                 </dependency>
             </dependencies>
             <build>
@@ -291,6 +298,9 @@
                                 <goals>
                                     <goal>build-frontend</goal>
                                 </goals>
+                                <configuration>
+                                    <optimizeBundle>false</optimizeBundle>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
