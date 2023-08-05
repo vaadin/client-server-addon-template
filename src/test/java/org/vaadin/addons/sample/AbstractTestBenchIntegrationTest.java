@@ -111,7 +111,8 @@ public abstract class AbstractTestBenchIntegrationTest extends ParallelTest {
         // We do screenshot testing, adjust settings to ensure less flakiness
         Parameters.setScreenshotComparisonTolerance(0.05);
         Parameters.setScreenshotComparisonCursorDetection(true);
-        testBench().resizeViewPortTo(800, 600);
+        // Fails in GH Actions window runner
+        // testBench().resizeViewPortTo(800, 600);
         Parameters.setMaxScreenshotRetries(3);
         Parameters.setScreenshotRetryDelay(1000);
 
