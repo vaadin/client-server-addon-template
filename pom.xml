@@ -181,7 +181,7 @@
                     <httpConnector>
                         <port>8080</port>
                     </httpConnector>
-                    <scanIntervalSeconds>3</scanIntervalSeconds>
+                    <scan>3</scan>
                     <!-- Use test scope because the UI/demo classes are in the test package. -->
                     <useTestScope>true</useTestScope>
                     <supportedPackagings>
