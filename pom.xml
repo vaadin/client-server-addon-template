@@ -324,7 +324,7 @@
                             <useTestScope>true</useTestScope>
                             <stopKey>stop-it</stopKey>
                             <stopPort>8098</stopPort>
-                            <scanIntervalSeconds>0</scanIntervalSeconds>
+                            <scan>0</scan>
                             <supportedPackagings>
                                 <supportedPackaging>jar</supportedPackaging>
                             </supportedPackagings>
