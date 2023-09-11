@@ -102,7 +102,7 @@ public abstract class AbstractTestBenchIntegrationTest extends ParallelTest {
             super.setup();
         } else {
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless=new", "--disable-gpu");
+            options.addArguments("--headless=new", "--disable-gpu", "--no-sandbox");
 
             setDriver(TestBench.createDriver(new ChromeDriver(options)));
         }
