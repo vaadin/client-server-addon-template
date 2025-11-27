@@ -32,20 +32,14 @@ For testing and development:
 
 ### Deployment
 
-- Starting the test/demo server in dev-mode:
+- Starting the test/demo server to http://localhost:8080:
 ```
 mvn jetty:run
 ```
-- Starting the test/demo server in prod-mode:
-```
-mvn jetty:run -Pproduction
-```
-
-These deploy test view at http://localhost:8080
 
 ### Integration test
 
-To run Integration Tests, execute `mvn verify -Pit,production`.
+To run Integration Tests, execute `mvn verify -Pit`.
 
 ## Publishing to Vaadin Directory
 
@@ -61,7 +55,7 @@ You can create the zip package needed for [Vaadin Directory](https://vaadin.com/
 
 ```
 mvn versions:set -DnewVersion=1.0.0 # You cannot publish snapshot versions 
-mvn package -Pdirectory,production
+mvn package -Pdirectory
 ```
 
 The package is created as `target/{project-name}-1.0.0.zip`

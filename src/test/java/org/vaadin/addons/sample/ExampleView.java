@@ -1,6 +1,6 @@
 package org.vaadin.addons.sample;
 
-import com.vaadin.componentfactory.ToggleButton;
+import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.router.Route;
@@ -11,8 +11,8 @@ import com.vaadin.flow.router.Route;
 @Route("")
 public class ExampleView extends VerticalLayout {
     Clock clock = new Clock();
-    ToggleButton format12h = new ToggleButton("Use 12 hour format",clock.isFormat12h());
-    ToggleButton showSeconds = new ToggleButton("Show seconds",clock.isShowSeconds());
+    Checkbox format12h = new Checkbox("Use 12 hour format",clock.isFormat12h());
+    Checkbox showSeconds = new Checkbox("Show seconds",clock.isShowSeconds());
     Select<Integer> update = new Select<>();
 
     public ExampleView() {
