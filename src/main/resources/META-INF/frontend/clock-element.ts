@@ -1,18 +1,31 @@
 import {css, html, LitElement, TemplateResult, PropertyValueMap } from 'lit';
-import {property, customElement} from 'lit/decorators.js';
 
 /** Custom elemnt displaying current time clock.
- * 
+ *
  * Element impleme
+ *
+ * Note: this component intentionally avoids the `@customElement`/`@property`
+ * decorators from 'lit/decorators.js'. Add-on frontend sources are copied into
+ * the consuming project's `generated/jar-resources` folder, which is excluded
+ * from the generated tsconfig, so `experimentalDecorators` is not applied when
+ * the bundle is built. Using the static `properties` API and an explicit
+ * `customElements.define` keeps the emitted bundle valid JavaScript.
  */
-@customElement('clock-element')
 export class ClockElement extends LitElement {
 
-    @property({ type: Boolean }) showSeconds = true;
+    static properties = {
+        showSeconds: { type: Boolean },
+        format12h: { type: Boolean },
+        updateInterval: { type: Number },
+    };
 
-    @property({ type: Boolean }) format12h = false;
+    // `declare` emits no class field, so these do not shadow the reactive
+    // property accessors Lit installs from the static `properties` block.
+    declare showSeconds: boolean;
 
-    @property({ type: Number }) updateInterval = 0;
+    declare format12h: boolean;
+
+    declare updateInterval: number;
 
     // Formatted strings of current time
     private _hours: string = "";
@@ -22,6 +35,13 @@ export class ClockElement extends LitElement {
 
     // Handle to periodic updater
     updater?: any;
+
+    constructor() {
+        super();
+        this.showSeconds = true;
+        this.format12h = false;
+        this.updateInterval = 0;
+    }
 
     /** Update the time fields based on current time.
      * 
@@ -113,5 +133,7 @@ export class ClockElement extends LitElement {
         if (changedProperties.has('updateInterval')) {this._restartPeriodicUpdater();}        
         return super.shouldUpdate(changedProperties);
     }
-    
+
 }
+
+customElements.define('clock-element', ClockElement);
